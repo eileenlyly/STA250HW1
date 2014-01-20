@@ -2,25 +2,39 @@
 #                         STA250 Homework1 Method 2 -- MySQL
 #                         Yu Liu 998611750 yuliu@ucdavis.edu
 ####################################################################################
+
+# Execute the following shell command in bash, stdout is written to txt file
+# $tar xOjf Delays1987_2013.tar.bz2 | cut -d, -f15,45 | sed -e '/ARR_DEL15/d' -e' s/[^0-9.-]*//g'  -e '/^$/d'  -e 's/\.00//'  > ArrDelay_clean.txt
+# Run time = 1033s
+
+# R code timer starts here
 start <- proc.time()
 library(RMySQL)
 
-pathtofile = getwd()
 # Log in with root
 # If you have setup password, use:
 # conn <- dbConnect(MySQL(), user = "root", password = <password>)
 conn <- dbConnect(MySQL(), user = "root")
-# dbSendQuery(conn, "CREATE DATABASE Flight")
+
+# Create new database and table, delete duplicate db and table if any
+dbSendQuery(conn, "CREATE DATABASE Flight")
 dbSendQuery(conn, "USE Flight")
 dbSendQuery(conn, "CREATE TABLE Delay (Arr INT)")
+
+# Load txt file to db
+pathtofile = getwd()
 query = paste("LOAD DATA INFILE '",pathtofile, "/ArrDelay_clean.txt' INTO TABLE Delay", sep = "")
 dbSendQuery(conn, query)
+
+# Get mean
 res <- dbSendQuery(conn, "SELECT AVG(Arr) FROM Delay")
 dbmean = fetch(res, n=-1)[1,1]
 
+# Get SD
 res <- dbSendQuery(conn, "SELECT STDDEV(Arr) FROM Delay")
 dbsd = fetch(res, n=-1)[1,1]
 
+# Get median by sorting
 res <- dbSendQuery(conn, "SELECT COUNT(*) FROM Delay")
 dbn = fetch(res, n=-1)[1,1]
 start <- proc.time()
@@ -44,4 +58,12 @@ res <- dbSendQuery(conn, query)
 dbm2 = fetch(res, n=-1)[1,1]
 
 dbmedian = (dbm1+dbm2)/2
+
+# Get execution time
 dbtime = dbtime + proc.time()-start
+# Result2: Mean = 6.5665 SD = 31.5563 Median = 0 time = 2082 +1033s
+
+# Save system information
+M2Info <- list(time = dbtime +1033, results = c(mean = dbmean, median = dbmedian, sd = dbsd),
+               system = Sys.info(),  session = sessionInfo())
+save(M2Info, file = "results2.rda")
