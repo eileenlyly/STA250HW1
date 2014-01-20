@@ -8,7 +8,7 @@
 # com = "tar xOjf Delays1987_2013.tar.bz2 | cut -d, -f15,45 | sed -e '/ARR_DEL15/d' -e' s/[^0-9.-]*//g'  -e '/^$/d'  -e 's/\\.00//' | sort -n | uniq -c"
 # uniq = system (com, intern = TRUE)
 
-# Alternate2: execute the following shell command in bash, stdout is written to csv file
+# Alternate2: execute the following shell command in bash, stdout is written to txt file
 # $tar xOjf Delays1987_2013.tar.bz2 | cut -d, -f15,45 | sed -e '/ARR_DEL15/d' -e' s/[^0-9.-]*//g'  -e '/^$/d'  -e 's/\.00//' | sort -n | uniq -c > uniq.txt
 # Run time = 1168s
 # R code timer starts here
@@ -61,7 +61,7 @@ Median = (m1 + m2)/2
 # Get execution time
 time = proc.time()-start
 
-# Result1: Mean = 6.5665 SD = 31.5563 Median = 0 time = 0.437s
+# Result1: Mean = 6.5665 SD = 31.5563 Median = 0 time = 0.437 + 1168s
  
 M1Info <- list(time = time + 1168, results = c(mean = Mean, median = Median, sd = SD),
      system = Sys.info(),  session = sessionInfo())
