@@ -6,18 +6,12 @@
 # R code timer starts here
 start <- proc.time()
 
-# Modify FastCSVSample package:
-# R-> FastCSVSample.R ->
-# getNumLines =
-#   function(file)
-#   {
-#     txt = system(sprintf("wc -l %s", file), intern = TRUE)
-#     as.integer(gsub("?([0-9]+) .*", "\\1", txt))
-#   }
+# Import Duncan's FastCSVSample package
+# https://github.com/duncantl/FastCSVSample
 library(FastCSVSample)
 
 # Decompress tar.bz2 to subdirectory data
-dir = paste(getwd(), "/data", sep = "")
+dir = paste(getwd(), "/data/", sep = "")
 system(paste("cd", getwd()))
 system("mkdir data")
 system("tar xjf Delays1987_2013.tar.bz2 -C data")
@@ -31,11 +25,11 @@ SampleLines2 = {}
 
 # Loop over files, each file grab 2000 samples
 for(i in 1:21){
-  SampleLines1 = c(SampleLines1, csvSample(paste("data/", files[i], sep = ""), 2000))
+  SampleLines1 = c(SampleLines1, csvSample(paste(dir, files[i], sep = ""), 2000))
 }
 
 for(i in 22:81){
-  SampleLines2 = c(SampleLines2, csvSample(paste("data/", files[i], sep = ""), 2000))
+  SampleLines2 = c(SampleLines2, csvSample(paste(dir, files[i], sep = ""), 2000))
 }
 
 # Each sample line extract the 15/45 column, convert them to integers and store
@@ -60,10 +54,11 @@ for(i in 1:n2){
 SampleMean = mean(ArrDelay)
 SampleSD = sd(ArrDelay)
 SampleMedian = median(ArrDelay)
-# SampleMean = 5.3992, SampleSD = 34.3086, SampleMedian = -3
+# SampleMean = 5.3992, SampleSD = 34.3086, SampleMedian = -3 time = 1525s
 
 # Get execution time
 SampleTime = proc.time()-start
+# Time = 1526s
 
 # Save system information
 M3Info <- list(time = SampleTime, results = c(mean = SampleMean, median = SampleMedian, sd = SampleSD),
