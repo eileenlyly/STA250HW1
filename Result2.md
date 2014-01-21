@@ -1,6 +1,5 @@
 MySQL Method
 ---------------------
-----
 
 ####Summary
 * Data set: US flight information from 1987 to 2012, [compressed bz2 files].
