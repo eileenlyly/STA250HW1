@@ -37,7 +37,6 @@ dbsd = fetch(res, n=-1)[1,1]
 # Get median by sorting
 res <- dbSendQuery(conn, "SELECT COUNT(*) FROM Delay")
 dbn = fetch(res, n=-1)[1,1]
-start <- proc.time()
 dbSendQuery(conn, "CREATE TABLE Delay_Ordered AS (SELECT * FROM Delay ORDER BY Arr)")
 
 if(dbn%%2 == 0){
