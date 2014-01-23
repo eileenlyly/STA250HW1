@@ -6,7 +6,7 @@ FastCSVSample Method
 * Data set: US flight information from 1987 to 2012, [compressed bz2 files].
 * We want to calculate the average, SD and median for the values (in minutes) in column *ArrDelay* in each csv files. In files 1987.csv-2007.csv, it is column 15; in files 2008[month].csv - 2012[month].csv, it is column 43.
 * All procedures are tested in Mac OSX 10.8.5 and R 3.0.2
-* For convenience, store all data files and R workspace are in the same directory. If not, change the path to file accordingly.*
+* For convenience, store all data files and R workspace are in the same directory. If not, change the path to file accordingly.
 
 ---
 
@@ -44,6 +44,7 @@ We consider two types of files (both have delimator ","): for files from 1987-20
 * ####Average = 5.3992, SD = 34.3086, Median = -3 (All these results are variable)
 * Runtime: 1525 s in R
 * The detailed R script is [M3.R](https://github.com/eileenlyly/STA250HW1/blob/master/M3.R).
+
 ----
 **Author: Yu Liu, [yuliu@ucdavis.edu](mailto:yuliu@ucdavis.edu)**
 
