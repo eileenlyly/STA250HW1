@@ -1,6 +1,5 @@
 FastCSVSample Method
 ---------------------
-----
 
 ####Summary
 * Data set: US flight information from 1987 to 2012, [compressed bz2 files].
@@ -42,7 +41,7 @@ We consider two types of files (both have delimator ","): for files from 1987-20
 ####Result Report
 * 157,938 valid sample ArrDelay values extracted, that is about 0.1% of the total data set.
 * ####Average = 5.4639, SD = 33.7427, Median = -2 (All these results are variable)
-* Runtime: 615 s in R
+* Runtime: 1526 s in R
 * The detailed R script is [M3.R](https://github.com/eileenlyly/STA250HW1/blob/master/M3.R).
 
 ----
