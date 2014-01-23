@@ -2,7 +2,6 @@ GitHub Repository
 ---------------------
 https://github.com/eileenlyly/STA250HW1.git
 
-----
 
 Efficiency Comparison
 ---------------------
@@ -35,7 +34,6 @@ For frequency table and MySQL method, we get median by sorting the data first, w
 
 Frequency table is the most efficiency way in time.
 
----
 
 Results Comparison
 ---------------------
@@ -48,7 +46,6 @@ Results Comparison
 
 Only the result from CSV Sample is inaccurate and variable for each time we execute the code.
 
----
 
 Method Details
 ---------------------
