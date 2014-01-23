@@ -54,7 +54,7 @@ for(i in 1:n2){
 SampleMean = mean(ArrDelay)
 SampleSD = sd(ArrDelay)
 SampleMedian = median(ArrDelay)
-# SampleMean = 5.3992, SampleSD = 34.3086, SampleMedian = -3 time = 1525s
+# SampleMean = 5.4639, SampleSD =33.7427, SampleMedian = -2 time = 1526 s
 
 # Get execution time
 SampleTime = proc.time()-start
