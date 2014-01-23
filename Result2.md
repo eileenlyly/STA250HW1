@@ -74,7 +74,7 @@ SELECT * FROM Delay_Ordered LIMIT 1 OFFSET MID
 ####Result Report
 * 145.6 million valid ArrDelay numbers
 * ####Average = 6.5665, SD = 31.5563, Median = 0
-* Runtime: 1033 s in shell,  2082 s in R
+* Runtime: 985 s in shell,  3438 s in R
 * The detailed R script is [M2.R](https://github.com/eileenlyly/STA250HW1/blob/master/M2.R).
 
 ----
