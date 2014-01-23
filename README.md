@@ -33,11 +33,8 @@ For frequency table and MySQL method, we get median by sorting the data first, w
 | **MySQL**     | 4423 s
 |**CSV Sample**|1526 s
 
-Frequency table is the most efficiency way in time.
 
-
-Results Comparison
----------------------
+####Results 
 
 |            |   Data Size|Average   | Standard Deviation  |  Median  |
 | :-----------: | :-----------: |:-------------:| :----------:|:----------:|
@@ -46,6 +43,11 @@ Results Comparison
 |**CSV Sample**|157,938|5.4639|33.7427|-2
 
 Only the result from CSV Sample is inaccurate and variable for each time we execute the code.
+
+Tradeoff
+---------------------
+Database uses slightly less time than shell to load the data. However, shell can sort the values in a pipeline, it takes much less extra time to sort. CSV sample method also has a short calculation time, but much longer to decompress and sample the lines. Plus, the result is variable and inaccurate. 
+In conclusion, get the frequency table in shell is the most efficiency way.
 
 
 Method Details
