@@ -9,7 +9,7 @@ Efficiency Comparison
 * ####Loading Data
 To standardize the data loading time,  the time is all counted from decompressing the tar.bz2 file 
 
-|            |      
+|            |     Time |
 | :-----------: | :-----------: |
 |**Frequency Table**| 1033 s 
 | **MySQL**     | 985 s
@@ -27,9 +27,9 @@ For frequency table and MySQL method, we get median by sorting the data first, w
 
 * ####Total Execution time
 
-|            |      
+|            |  Time    |
 | :-----------: | :-----------: |
-|**Frequency Table **| 1168 s 
+|**Frequency Table**| 1168 s 
 | **MySQL**     | 4423 s
 |**CSV Sample**|1526 s
 
