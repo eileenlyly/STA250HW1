@@ -6,7 +6,7 @@ https://github.com/eileenlyly/STA250HW1.git
 
 Efficiency Comparison
 ---------------------
-* ####Loading Data
+####Loading Data
 To standardize the data loading time,  the time is all counted from decompressing the tar.bz2 file 
 
 |            |     Time |
@@ -15,7 +15,7 @@ To standardize the data loading time,  the time is all counted from decompressin
 | **MySQL**     | 985 s
 |**CSV Sample**|615 s
 
-* ####Calculation
+####Calculation
 For frequency table and MySQL method, we get median by sorting the data first, which is the dominate of the time for finding median. We iterate every line of frequency table to calculate the average and sd. MySQL has build-in function `AVG()` and `SD()`; R also has `mean{base}`, `sd{stats}` and  `median{stats}`.
 
 |            |    Average   | Standard Deviation  | Sort|  Median  |
@@ -25,7 +25,7 @@ For frequency table and MySQL method, we get median by sorting the data first, w
 |**CSV Sample**|0.026 s|0.039 s|--|0.038 s
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Sort in shell is done in a pipeline, so it takes significantly less time.*
 
-* ####Total Execution time
+####Total Execution time
 
 |            |  Time    |
 | :-----------: | :-----------: |
