@@ -60,7 +60,7 @@ dbmedian = (dbm1+dbm2)/2
 
 # Get execution time
 dbtime = dbtime + proc.time()-start
-# Result2: Mean = 6.5665 SD = 31.5563 Median = 0 time = 2082 +1033s
+# Result2: Mean = 6.5665 SD = 31.5563 Median = 0 time = 4423 s
 
 # Save system information
 M2Info <- list(time = dbtime +1033, results = c(mean = dbmean, median = dbmedian, sd = dbsd),
