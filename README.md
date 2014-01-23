@@ -12,7 +12,8 @@ To standardize the data loading time,  the time is all counted from decompressin
 | :-----------: | :-----------: |
 |**Frequency Table**| 1033 s 
 | **MySQL**     | 985 s
-|**CSV Sample**|615 s
+|**CSV Sample**|911 s (decompress)
+|**CSV Sample**|615 s (sample lines)
 
 ####Calculation
 For frequency table and MySQL method, we get median by sorting the data first, which is the dominate of the time for finding median. We iterate every line of frequency table to calculate the average and sd. MySQL has build-in function `AVG()` and `SD()`; R also has `mean{base}`, `sd{stats}` and  `median{stats}`.
