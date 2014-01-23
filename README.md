@@ -22,7 +22,7 @@ For frequency table and MySQL method, we get median by sorting the data first, w
 |**Frequency Table**| 0.171 s| 0.159 s|133 s (shell)|0.039 s
 | **MySQL**     | 112.817 s |93.79 s  |3150.43 s|81.18 s
 |**CSV Sample**|0.026 s|0.039 s|--|0.038 s
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*Sort in shell is done in a pipeline, so it takes significantly less time.*
+*Sort in shell is done in a pipeline, so it takes significantly less time.*
 
 ####Total Execution time
 
