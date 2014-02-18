@@ -56,3 +56,7 @@ See following pages [Result1.md](https://github.com/eileenlyly/STA250HW1/blob/ma
 
 ----
 **Author: Yu Liu, [yuliu@ucdavis.edu](mailto:yuliu@ucdavis.edu)**
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/eileenlyly/sta250hw1/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
